@@ -64,7 +64,17 @@ class Formation:
                 print(f'-{j.Name}\t', end =' ')
             
             print()
+    
+    def reorderDepthChart(self):
+        s = input("Which position do you want to reorder?: ")
+        x = self.Positions[s]
+        newOrder = [0 for _ in self.depthChart[x]]
+        
+        for i in self.depthChart[x]:
+            j = input(f'At which index do you want {i.Name} to be? ')
+            newOrder[int(j)] = i
 
+        self.depthChart[x] = newOrder
 
 
 class OffensiveFormation(Formation):
