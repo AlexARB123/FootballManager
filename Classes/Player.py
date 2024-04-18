@@ -52,4 +52,4 @@ class Player:
     
     # Treating as a string
     def __str__(self) -> str:
-        return f"{self.Number} \t {self.Name} \t {self.Position}"
+        return f"{self.idNum}-{self.Number} \t {self.Name} \t {self.Position}"

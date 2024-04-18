@@ -28,13 +28,20 @@ class Team:
         Players.sort(key = lambda x: x.idNum)
         
         for i in Players:
-            for j in i.Position:
-                if j in Team.OffensivePositions and i not in self.Offense:
-                    self.Offense.append(i)
-                elif j in Team.DefensivePositions and i not in self.Defense:
-                    self.Defense.append(i)
-                elif j in Team.SpecialPositions and i not in self.Special:
-                    self.Special.append(i)
+            self.assignPlayer(i)
+
+    def assignPlayer(self, Player):
+        for j in Player.Position:
+                if j in Team.OffensivePositions and Player not in self.Offense:
+                    self.Offense.append(Player)
+                elif j in Team.DefensivePositions and Player not in self.Defense:
+                    self.Defense.append(Player)
+                elif j in Team.SpecialPositions and Player not in self.Special:
+                    self.Special.append(Player)
+    
+    def addPlayer(self, Player):
+        self.Players.append(Player)
+        self.assignPlayer(Player)
         
     def printTeam(self):
         print("Offense")

@@ -11,11 +11,10 @@ t = Team(Players)
 
 t.printTeam()
 
-F1 = DefensiveFormation("Nickel", "Nickel formation for defending passes", "4-3")
-F1.assignFormation()
-F1.printPositions()
-F1.createDepthChart(Players)
-F1.printDepthChart()
+t.addPlayer(Player(8000, 'Dario', 17, ['ILB', 'LS']))
+
+t.printTeam()
+
 
 
 

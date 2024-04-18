@@ -11,6 +11,7 @@ class Formation:
             Name -> Formation Name
             Positions -> Dictionary of formation with the position name in formation and their location left to right
             Description -> Formation Description
+            DepthChart -> The individual Depth Chart for the formation
     """
     def __init__(self, Name, Description) -> None:
         self.Name = Name
