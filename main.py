@@ -13,4 +13,9 @@ t.printTeam()
 
 F1 = DefensiveFormation("Nickel", "Nickel formation for defending passes", "4-3")
 F1.assignFormation()
-print(F1)
+F1.printPositions()
+F1.createDepthChart(Players)
+F1.printDepthChart()
+
+
+

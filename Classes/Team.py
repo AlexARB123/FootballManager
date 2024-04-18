@@ -11,6 +11,7 @@ class Team:
             Offense -> List of all current Offensive Players, sorted by Player's idNum
             Defense -> List of all current Defensive Players, sorted by Player's idNum
             Special -> List of all current Special Teamers, sorted by Player's idNum
+            Formations -> List of all formations the team manages including Offense, Defense and Special Teams
     """
     # Tuples for distinction between Positions and assignation
     OffensivePositions = ("QB", "RB", "WR", "TE", "OT", "OG", "C")
@@ -23,6 +24,7 @@ class Team:
         self.Offense = []
         self.Defense = []
         self.Special = []
+        self.Formations = []
         Players.sort(key = lambda x: x.idNum)
         
         for i in Players:
