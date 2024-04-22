@@ -28,10 +28,10 @@ class Team:
         Players.sort(key = lambda x: x.idNum)
         
         for i in Players:
-            self.assignPlayer(i)
+            self.__assignPlayer(i)
 
     # Helper function for in real time player assignation
-    def assignPlayer(self, Player):
+    def __assignPlayer(self, Player):
         for j in Player.Position:
                 if j in Team.OffensivePositions and Player not in self.Offense:
                     self.Offense.append(Player)
@@ -43,7 +43,7 @@ class Team:
     # Function to add a Player to the team
     def addPlayer(self, Player):
         self.Players.append(Player)
-        self.assignPlayer(Player)
+        self.__assignPlayer(Player)
     
     # Function to print all Players on the team by assignation  
     def printTeam(self):
@@ -58,5 +58,13 @@ class Team:
         print("Special Teams")
         for i in self.Special:
             print(i)
-            
+    
+    def convertToDict(self):
+          return {
+        'Players': [player.__dict__ for player in self.Players],
+        'Offense': [player.__dict__ for player in self.Offense],
+        'Defense': [player.__dict__ for player in self.Defense],
+        'Special': [player.__dict__ for player in self.Special],
+        'Formations': self.Formations
+    }
 
