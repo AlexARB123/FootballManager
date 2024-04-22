@@ -30,6 +30,7 @@ class Team:
         for i in Players:
             self.assignPlayer(i)
 
+    # Helper function for in real time player assignation
     def assignPlayer(self, Player):
         for j in Player.Position:
                 if j in Team.OffensivePositions and Player not in self.Offense:
@@ -39,10 +40,12 @@ class Team:
                 elif j in Team.SpecialPositions and Player not in self.Special:
                     self.Special.append(Player)
     
+    # Function to add a Player to the team
     def addPlayer(self, Player):
         self.Players.append(Player)
         self.assignPlayer(Player)
-        
+    
+    # Function to print all Players on the team by assignation  
     def printTeam(self):
         print("Offense")
         for i in self.Offense:
